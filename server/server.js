@@ -14,15 +14,15 @@ app.use(bodyParser.urlencoded({ extended: true }))
 // parse application/json
 app.use(bodyParser.json())
 
-app.get('/', function(req, res) {
+app.get('/', (req, res) => {
     res.json('pagina en blanco');
 });
 
-app.get('/usuario', function(req, res) {
+app.get('/usuario', (req, res) => {
     res.json('get Usuario LOCAL!!!');
 });
 
-app.post('/usuario', function(req, res) {
+app.post('/usuario', (req, res) => {
 
     let body = req.body;
 
@@ -41,7 +41,7 @@ app.post('/usuario', function(req, res) {
 
 });
 
-app.put('/usuario/:id', function(req, res) {
+app.put('/usuario/:id', (req, res) => {
 
     let id = req.params.id;
 
@@ -50,7 +50,7 @@ app.put('/usuario/:id', function(req, res) {
     });
 });
 
-app.delete('/usuario', function(req, res) {
+app.delete('/usuario', (req, res) => {
     res.json('delete Usuario');
 });
 
