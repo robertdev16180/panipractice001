@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
 app.get('/', (req, res) => {
-    res.json('pagina en blanco');
+    res.json('Hello World');
 });
 
 app.get('/usuario', (req, res) => {
@@ -42,9 +42,11 @@ app.post('/usuario', (req, res) => {
 });
 
 app.put('/usuario/:id', (req, res) => {
-
+    
     let id = req.params.id;
-
+    let body = req.body;
+    console.log('params: ', req.params);
+    console.log('body: ', body);
     res.json({
         id
     });
